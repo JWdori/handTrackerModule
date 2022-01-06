@@ -1,2 +1,3 @@
 # handTrackerModule
-You can open test file to see how its used
+
+You can open **testing.py** file to see how its used
