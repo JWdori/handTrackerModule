@@ -35,11 +35,10 @@ class HandDetector():
         image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
         if self.results.multi_hand_landmarks:
             my_hand = self.results.multi_hand_landmarks[0]
+            all = []
 
             for id, lms in enumerate(my_hand.landmark):
                 h, w, c = image.shape
                 cx, cy = int(lms.x * w), int(lms.y * h)
-                lm_list = cx
-                if id == 0:
-                    cv2.circle(image, (cx, cy), 7, (255, 0, 255), cv2.FILLED)
-                    return cx, cy
+                all.append((id, cx, cy))
+            return all
