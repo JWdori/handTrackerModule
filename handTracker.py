@@ -10,7 +10,6 @@ class HandDetector():
         self.model_complexity = model_complexity
         self.detection_conf = detection_conf
         self.track_conf = track_conf
-
         self.mp_hands = mp.solutions.hands
         self.mp_drawing_styles = mp.solutions.drawing_styles
         self.hands = self.mp_hands.Hands(self.mode, self.maxHands, self.model_complexity,
